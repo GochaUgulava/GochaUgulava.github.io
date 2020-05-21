@@ -1,0 +1,805 @@
+<!DOOCTYPE html>
+<html>
+<head>
+
+<title>Technical Documentation</title>
+<meta charset="utf-8" />
+
+<style>
+	html {
+	background: #d3d3d3;
+	font-size: 10px;
+	}
+	
+	body {
+	font-family: sans-serif;
+	}
+
+
+/* navbar */
+	
+	#navbar {
+	position: fixed;
+	width: 300px;
+	height: 100%;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	border-right: 2px solid;
+	}
+	
+	#navbar header {
+	width: 300px;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid;
+	}
+	
+	#navbar ul {
+	height: 80%;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	}
+			
+	h1 {
+	font-size: 4rem;
+	font-weight: bold;
+	padding: 0;
+	margin: 10px;
+	text-align: center;
+	}
+	
+	.nav-link {
+	display: block;
+	font-size: 2rem;
+	color: black;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 20px;
+	text-decoration: none;
+	list-style-type: none;
+	border-top: 1px solid;
+	border-color: black;
+	}
+	
+	a:hover {
+	color: white;
+	background-color: #2f4f4f;
+	}
+	
+	
+/* main-doc */
+
+	#main-doc {
+	position: absolute;
+	margin-left: 300px;
+	padding: 20px;
+	}
+	
+	.main-section {
+	margin-bottom: 60px;
+	margin-left: 20px;
+	margin-right: 20px;
+	}
+	
+	h2 {
+	font-size: 3rem;
+	margin-left: 40px;
+	}
+	
+	p {
+	font-size: 2rem;
+	line-height:2.6rem;
+	text-align: justify;
+	}
+	
+	#main-doc li {
+	font-size: 2rem;
+	line-height:2.6rem;
+	text-align: justify;
+	}
+	
+	code {
+	display: block;
+	width: 80%;
+	font-size: 1.7rem;
+	color: black;
+	background-color: #a9a9a9;
+	padding: 10px;
+	border-radius: 1rem;
+	margin-left: 10%;
+	}
+	
+	.example {
+	display: block;
+	width: 80%;
+	font-size: 1.5rem;
+	color: black;
+	background-color: white;
+	padding: 10px;
+	border-radius: 1rem;
+	margin-left: 10%;
+	}
+	
+/* media query */
+	
+	@media (max-width:600px)  {
+	
+	#navbar {
+	position: absolute;
+	width: auto;
+	height: 300px;
+	border-right: 0;
+	}
+	
+	#navbar header {
+	width: auto;
+	}
+	
+	#navbar ul {
+	height: 80%;
+	top: 0;
+	margin-bottom: 100px;
+	padding: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	}
+	
+	#main-doc {
+	position: absolute;
+	top: 300px;
+	margin-left: 0;
+	padding: 20px;
+	}
+	}
+
+	
+</style>
+</head>
+<body>
+
+
+<nav id="navbar">
+	<header>
+		<h1>HTML for beginners<h1>
+	</header>
+ 
+	<ul>
+		<li><a class="nav-link" href="#introduction">Introduction</a></li>
+		<li><a class="nav-link" href="#What_Is_HTML?">What Is HTML?</a></li>
+		<li><a class="nav-link" href="#Versions_Of_HTML">Versions Of HTML</a></li>
+		<li><a class="nav-link" href="#Relation_To_Other_Programming_Languages">Relation To Other Programming Languages</a></li>
+		<li><a class="nav-link" href="#Programs_Used_To_Write_And_Edit_HTML_Code">Programs Used To Write And Edit HTML Code</a></li>
+		<li><a class="nav-link" href="#HTML_Tags">HTML Tags</a></li>
+		<li><a class="nav-link" href="#HTML_Elements">HTML Elements</a></li>
+		<li><a class="nav-link" href="#HTML_Attributes">HTML Attributes</a></li>
+		<li><a class="nav-link" href="#Create_A_New_Document">Create A New Document</a></li>
+		<li><a class="nav-link" href="#Create_A_Basic_HTML_Template">Create A Basic HTML Template</a></li>
+		<li><a class="nav-link" href="#Add_A_Page_Title_And_Some_Indenting">Add A Page Title And Some Indenting</a></li>
+		<li><a class="nav-link" href="#Add_Some_Headings">Add Some Headings </a></li>
+		<li><a class="nav-link" href="#Add_Some_Paragraph_Text">Add Some Paragraph Text</a></li>
+		<li><a class="nav-link" href="#Add_Some_Formatting_To_The_Text">Add Some Formatting To The Text</a></li>
+		<li><a class="nav-link" href="#Add_Some_Style_To_The_Text">Add Some Style To The Text</a></li>
+		<li><a class="nav-link" href="#Create_Some_Lists">Create Some Lists</a></li>
+		<li><a class="nav-link" href="#Create_A_Hyperlink">Create A Hyperlink</a></li>
+		<li><a class="nav-link" href="#Add_An_Image">Add An Image</a></li>
+		<li><a class="nav-link" href="#Create_A_Table">Create A Table</a></li>
+		<li><a class="nav-link" href="#Add_A_Quotation">Add A Quotation</a></li>
+		<li><a class="nav-link" href="#Add_A_Comment">Add A Comment</a></li>
+		<li><a class="nav-link" href="#conclusion">Conclusion</a></li>
+		<li><a class="nav-link" href="#references">References</a></li>
+	</ul>
+ 
+</nav>
+
+
+	
+<main id="main-doc">
+	
+	<section id="introduction"  class="main-section">
+		<header>
+		<h2>Introduction</h2></header>
+		<article>
+			<p>
+			HTML is the standard language that is used for creating webpages and web applications. Every time you access a website, a server sends an HTML file to your computer and your browser interprets and displays the information included in that file. In fact, all the information you are reading now is simply data that has been stored in an HTML file and sent to your browser.
+			</p>
+			<p>
+			Most people can learn the basics of HTML in just a few hours, and with a solid HTML foundation, you can progress to more complex languages such as CSS and JavaScript.
+			</p>
+			<p>
+			This guide will provide an introduction to writing HTML, examine the basic building blocks of HTML such as tags, elements and attributes, and help you create your first HTML page by following a step-by-step tutorial. By the end of this guide, you should have the basic knowledge required to start working on your own HTML projects.
+			</p>
+		</article>
+	</section>
+
+	<section id="What_Is_HTML?"  class="main-section">
+		<header>
+		<h2>What Is HTML?</h2></header>
+		<article>
+			<p>
+			HTML stands for HyperText Markup Language, which can be a confusing term for many beginners. The best way to explain HTML is to examine the meaning of each word.
+			</p>
+			<p>
+			<b>HyperText</b> refers to text that contains links to other texts. Every time you click on a highlighted or underlined link that takes you to another page, you are using hypertext. As more and more pages use hypertext to link to each other, a “web” of pages starts to form. This is where we get the term World Wide Web.
+			</p>
+			<p>
+			<b>Markup</b> refers to the special symbols or codes that are inserted into a document to tell the web browser how to display the document data. For example, markup code may tell the browser to display a phrase in <b>bold</b> or <i>italic</i> text, or may tell the browser which parts of the document are headings and which are paragraphs. HTML is just one of a number of languages that uses markup code.
+			</p>
+			<p>
+			<b>Language</b> refers to the idea that the code is standardized. Just like regular spoken languages, there are certain rules that everyone must follow when writing HTML. This is so that all browsers can understand and interpret the code. There are many different programming languages, and you may have heard of some of the popular ones such as Java, Python and Ruby. Each language has its own unique set of rules, and many languages can be used in combination with HTML to create amazing webpages and applications.
+			</p>
+			<p>
+			If we put these three definitions together, we could say that HTML is “a programming language that uses unique code which allows you to display linked documents in a browser”.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Versions_Of_HTML"  class="main-section">
+		<header>
+		<h2>Versions Of HTML</h2></header>
+		<article>
+			<p>
+			The first version of HTML was developed by physicist Tim Berners-Lee in 1990, and the first publicly available version was released in 1991. Since then, HTML has been updated numerous times to address advances in technology. The current standardized version is HTML5, which has been in use since 2014. Recommendations for change is HTML are made by the World Wide Web Consortium (W3C), a standards organization created with the purpose of developing guidelines and protocols for ensuring the long-term growth of the Web.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Relation_To_Other_Programming_Languages"  class="main-section">
+		<header>
+		<h2>Relation To Other Programming Languages</h2></header>
+		<article>
+			<p>
+			HTML, CSS and JavaScript are the three main languages that are used to create most webpages. Each of the languages has a different function and each has different rules, but they all work together to give webpages content, design and functionality.
+			</p>
+			<p>
+			As we mentioned before, <b>HTML</b> is the foundation of any site. The HTML code contains the site’s basic structure and content, which includes all the text, links, tables, links to images and other such elements.
+			</p>
+			<p>
+			<b>CSS</b> (Cascading Style Sheets) is used to define the design of the page, including things like the size of each element and how it looks. With CSS, you can set things like the style of the font you are using, the background color of the page, and the width of the border around elements on the page.
+			</p>
+			<p>
+			<b>JavaScript</b> is a more complex language that is used to create interactive elements on your page. When you hover your mouse over an image on a website and the image morphs or changes, that’s JavaScript editing your original HTML code. When you click on a product on a shopping website and your shopping cart automatically updates, that’s JavaScript too.
+			</p>
+			<p>
+			CSS and JavaScript can add design and functionality to a site, but without HTML, you won’t have a site to begin with. In fact, most sites will still display HTML data even if the CSS and JavaScript code is broken.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Programs_Used_To_Write_And_Edit_HTML_Code"  class="main-section">
+		<header>
+		<h2>Programs Used To Write And Edit HTML Code</h2></header>
+		<article>
+			<p>
+			One of the best things about learning how to write HTML code is that you don’t need to buy any special software to get started. You can write and edit HTML code in any regular text editor. Windows users can write code using the Notepad app which comes pre-installed with all versions of the operating system. Mac users can write code using the OSX equivalent which is call TextEdit. 
+			</p>
+			<p>
+			However, if you’re planning to do a lot of coding, it’s probably a good idea to download and install a text editor that is specifically designed for coding. These apps have various features and add-ons that help you keep your code clean and readable, and will allow you to code more efficiently. Some popular features are highlighting different code elements, autocompletion of code, automatic syntax checking based on which programming language you are using, and multiple tabs for easy switching between documents.
+			</p>
+			<p>
+			Atom is another powerful text editor that has an approachable design, making it easy to use for beginners. It was developed by GitHub users, which is the main reason it’s so highly customizable and hackable. The built-in package manager allows you to easily download and install extensions, and the app can be used on Linux, Windows and MacOS. Atom is free to download and use. 
+			</p>
+			<p>
+			CodeLobster is a free IDE for HTML, as well as PHP, CSS, and JavaScript. If you plan to learn and work with other coding languages, it’s a good idea to use an IDE that supports these. CodeLobster can be used on Windows and is free to download and use. 
+			</p>
+			<p>
+			There are also a number of online code editors that allow you to write and test your code using just your browser. Some of these editors allow you to save and publish your code so you can share it with other people. Three popular online editors are JSFiddle, Codepen and Thimble. 
+			</p>
+		</article>
+	</section>
+	
+	<section id="HTML_Tags"  class="main-section">
+		<header>
+		<h2>HTML Tags</h2></header>
+		<article>
+			<p>
+			You might remember we mentioned that the most notable feature of HTML code was the use of angle brackets. These angle brackets (and the code inside them) are called tags. Tags are used to separate HTML code from regular text. Any text written inside the angle brackets will not be displayed in the browser. The text inside the angle brackets is just used to tell the browser how to display or transform regular text located between the opening tag (also called the start tag) and the closing tag (also called the end tag). 
+			</p>
+			<p>
+			Tags usually come in pairs, and the difference between an opening tag and a closing tag is that the first symbol inside the brackets of a closing tag is a slash “/“ symbol. For example, here’s a pair of h1 tags (used to identify heading text), with some content in-between:
+			</p>
+			<code>&lt;h1&gt;This is some content.&lt;/h1&gt;</code>
+			<p>
+			Here’s an example of how we can use tags to transform text. If we add the sentence “This is some text.” to our HTML file, it will simply display as regular text like this: This is some text. But if we want to have the sentence display in bold text, we can add a &lt;b&gt; opening tag before the text, and a &lt;/b&gt; closing tag after the text. The “b” in the tag stands for “bold”.
+			</p>
+			<p>
+			If we want to have the sentence display in italic text, we can add an &lt;i&gt; opening tag before the text, and an &lt;/i&gt; closing tag after the text. As you’ve probably guessed, the “i” stands for “italic”.
+			</p>
+			<p>
+			If we want to have the sentence display as a hyperlink, we can add an &lt;a href=“www.google.com”&gt; opening tag before the text, and an &lt;/a&gt; closing tag after the text. Can you guess what the “a” stands for? This one’s a little harder… it stands for “anchor”.
+			</p>
+			<p>
+			If we click on this hyperlink, it will take us to a different webpage. If you take a look at the code, you can probably guess which page this text links to. Let’s put these three examples in to a simple HTML document:
+			</p>
+			<code>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;title&gt;Page Title&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;b&gt;This is some text.&lt;/b&gt;<br>&lt;i&gt;This is some text.&lt;/i&gt;<br>&lt;a href=”www.google.com”&gt;This is some text.&lt;/a&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</code>
+			<p>
+			There are two main rules you need to follow when using tags:
+			</p>
+			<ol>
+			<li>
+			You must always use angle brackets for tags. Square brackets and round brackets are used for different purposes in other programming languages. If you try to use square or round brackets in HTML, the browser won’t understand your code.
+			</li>
+			<li>
+			Tags almost always come in pairs. This means that (except for a few special examples) you must always close a tag after opening it. If you forget to add a closing tag, the element you are trying to transform won’t display properly. In the worst case scenario, forgetting to close a tag may cause your page to crash. Many text editors will automatically add a closing tag, but it’s a good idea to start getting into the habit of writing tags in pairs. The best way to do this is to write the opening tag first, the closing tag next, then add the content between the tags last.
+			</li>
+			</ol>
+		</article>
+	</section>
+	
+	<section id="HTML_Elements"  class="main-section">
+		<header>
+		<h2>HTML Elements</h2></header>
+		<article>
+			<p>
+			An element is an opening tag, a closing tag, and all the content that is included between the two tags. Let’s take a look at our previous example of how to use bold tags:
+			</p>
+			<code>&lt;b&gt;This is some text.&lt;/b&gt;</code>
+			<p>
+			In this example, &lt;b&gt; is the opening tag, &lt;/b&gt; is the closing tag, and “This is some text.” is the content. When we put it all together, we have an element. Elements are the like the puzzle pieces of HTML. You take a bunch of elements and fit them together to make a complete picture. In its most basic form, a webpage is simply an HTML document that is filled with complete HTML elements. Sounds simple, doesn’t it? In most cases, elements are simple. The tricky part comes when you start putting elements within elements.
+			</p>
+			<code>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;title&gt;Page Title&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;h1&gt;This is a heading.&lt;/h1&gt;<br>&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</code>
+			<p>
+			You can probably recognize the <b>h1</b> and <b>p</b> elements. If you look carefully, you may notice that these two elements are actually nested within another element, the body element. The <b>body</b> element is a special element that contains all the main content of the document that we want displayed in the browser.
+			</p>
+			<p>
+			In the previous example above the body element is another element, the <b>head</b> element. This is where we add special information about the document that we don’t want displayed in the browser, such as the document title and the document style. The body element and the head element are separate elements, but you may have noticed that these two elements are actually nested inside another element, the html element. The <b>html</b> element is the most basic element of all, and contains all the other elements included in the document. So if we go back and look at the h1 element, we can see that it is actually an element (h1) within an element (body) within an element (html). When you start writing very complex code, you might find yourself working with elements nested ten, twenty or even one-hundred levels deep!
+			</p>
+		</article>
+	</section>
+	
+	<section id="HTML_Attributes"  class="main-section">
+		<header>
+		<h2>HTML Attributes</h2></header>
+		<article>
+			<p>
+			Attributes are used to define additional information about an element. They are located inside the opening tag, and usually come in name/value pairs (name=“value”). All HTML elements can have attributes, but for most elements, we only use them when we need to. Attributes can be used to define things such as the height and width of an image, the style of an element (eg. color, size, font) and the language of the document.
+			</p>
+			<p>
+			You may have noticed that we’ve already used an attribute somewhere in this guide. Can you remember where? It was back when we were looking at anchor tags and we created a hyperlink:
+			</p>
+			<code>&lt;a href=”www.google.com”&gt;This is some text.&lt;/a&gt;</code>
+			<p>
+			The anchor tag is used to create a hyperlink, and the href attribute is to define the link address. Without the <b>href</b> attribute, you can still click on the link but nothing will happen. There are three main guidelines for using attributes. We use the word “guidelines”, because these are not exactly rules. They are more like standards that almost everyone has chosen to follow.
+			</p>
+			<ol>
+				<li>
+				Although you can write attributes in upper case, it’s a good idea to write attributes in lower case only.
+				</li>
+				<li>
+				Although it’s not strictly necessary, it’s a good idea to put quotation marks around the value to make it easier to identify.
+				</li>
+				<li>
+				Although you can use single quotation marks (‘value’), it’s a good idea to put values in double quotation marks (“value”).
+				</li>
+			</ol>
+			<p>
+			So, when we put together everything we know about tags, elements and attributes, we get a basic template of how an element should be written:
+			</p>
+			<code>&lt;tag attribute=“value”&gt;Some content&lt;/tag&gt;</code>
+		</article>
+	</section>
+	
+	<section id="Create_A_New_Document"  class="main-section">
+		<header>
+		<h2>Create A New Document</h2></header>
+		<article>
+			<p>
+			The first thing we’re going to do is open up our text editor and create a new document. For this guide we’ll be using the Brackets text editor, but you can use any text editor you like. Once you’ve created a new blank document, click “Save” and give the document a name. There are a number of naming conventions that you need to follow when creating an HTML document.
+			</p>
+			<ul>
+				<li>
+				HTML documents should be saved with the .html file extension.
+				</li>
+				<li>
+				The default homepage of a website will usually be named “index.html”, as this is the default file that browsers look for when accessing a website.
+				</li>
+				<li>
+				You should only use alphanumerics (a-z, 0-9), dashes (-), underscores (_) or tildes (~) in the page name.
+				</li>
+				<li>
+				You should only use lower case letters as some servers are sensitive to case.
+				</li>
+				<li>
+				Never use spaces in the file name of HTML documents.
+				</li>
+				<li>
+				It’s a good idea to create a naming convention and stick to it when planning a complex site.
+				</li>
+			</ul>
+			<p>
+			You can pick any name you like as long as it follows these rules. For this guide, we’re going to name our document “index.html”.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Create_A_Basic_HTML_Template"  class="main-section">
+		<header>
+		<h2>Create A Basic HTML Template</h2></header>
+		<article>
+			<p>
+			Next, we’re going to create a basic HTML template that you can use for any future HTML documents. We’re going to add four elements – <b>DOCTYPE</b>, <b>html</b>, <b>head</b> and <b>body</b>. On the first line of the document, add this element:
+			</p>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<p>
+			This is a special declaration that helps the browser display the page correctly by telling it the type of code we’re writing (in this case it’s HTML5). It should appear once at the start of the document before any other elements. This is a special element that doesn’t require a closing tag.
+			</p>
+			<p>
+			Next, we’re going to add the HTML opening and closing tags. These tags tell the browser that everything between the two tags is the HTML code that the browser needs to interpret. We’re going to be adding lots of code between these two tags, so we’ll write each tag on a separate line. Add these two lines to your code:
+			</p>
+			<code>&lt;html&gt;<br>&lt;/html&gt;</code>
+			<p>
+			Next, we’re going to add the head opening and closing tags on separate lines inside the html element. The head element contains meta information about the document that will not be displayed by the browser. We’re going to add things to the head element later, so we’ll put a blank line between the two head tags to make it easier to read. Go ahead and add &lt;head&gt;, a blank line and &lt;/head&gt; to the html element.
+			</p>
+			<p>
+			The last thing we’re going to add to our template is the body element. The body element contains important information about the document that will be displayed by the browser. This is where we will write most of our code. The body element requires an opening tag and a closing tag, and it should be written inside the html element, after the head element. Go ahead and add the two body tags, as well as a blank line in-between. It should look like this:
+			</p>
+			<code>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>...<br>&lt;/head&gt;<br>&lt;body&gt;<br>...<br>&lt;/body&gt;<br>&lt;/html&gt;</code>
+			<p>
+			This template will form the foundation of our HTML document. 
+			</p>
+		</article>
+	</section>
+	
+	<section id="Add_A_Page_Title_And_Some_Indenting"  class="main-section">
+		<header>
+		<h2>Add A Page Title And Some Indenting</h2></header>
+		<article>
+			<p>
+			The next thing we’re going to do is add a title to our page. The page title is different from the file name. The page title is what is displayed in the browser tab, and it is also what is indexed when search engines (such as Google) crawl your site.
+			</p>
+			<p>
+			We write the page title inside the title element, which we add to the head element of our document. When we add the <b>title</b> element to the head, we’re going to <b>indent</b> it. Indenting an element simply means moving it one step to the right. The reason we do this is to make our code easier to read.
+			</p>
+			<p>
+			Remember when we talked about nesting elements inside elements inside elements? If we keep adding elements directly underneath other elements, it becomes incredibly easy to lose track of where all our elements are located. Indenting adds some visual order to our code. Indenting is one area of coding that many people argue about. Should we indent using spaces or tabs (they are actually different things)? Should we indent two, four or eight spaces? Each coder has their own personal preference. For this guide, we’re going to indent with four spaces, but you can do whatever feels most natural for you. One more quick point – although they are actually located inside the html element, we usually don’t indent the head or body elements as they are always the same for every HTML document.
+			</p>
+			<p>
+			Go ahead and add an opening title tag, the title of your page (it can be anything you like), and a closing title tag to the head element. Don’t forget to indent your element one step.
+			</p>
+			<code>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page Title&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>...<br>&lt;/body&gt;<br>&lt;/html&gt;</code>
+		</article>
+	</section>
+	
+	<section id="Add_Some_Headings"  class="main-section">
+		<header>
+		<h2>Add Some Headings</h2></header>
+		<article>
+			<p>
+			It’s time to start adding some content to the body of our HTML document. The first thing we’ll start adding are <b>headings</b>. Headings are very important. Headings define the structure of your document. Search engines use headings to index the structure and content of your page. If you don’t have your headings set up properly, it may be harder for people to find your page when they use a search engine.
+			</p>
+			<p>
+			People also use headings to skim through webpages, so having a good heading structure makes your page more reader friendly. We can use the &lt;h1&gt; to &lt;h6&gt; tags to define our headings. &lt;h1&gt; the most important heading and &lt;h6&gt; is the least important heading.
+			</p>
+			<p>
+			You should never use heading tags to make your text bigger or bold. You can do that using other methods. Heading tags should only be used to define headings. To see how headings work, let’s go ahead and add six headings to our document. The headings should be in the body element, and should be indented one step. You can put any text you’d like as the heading content. For this guide, we’ll just name them “Heading X”. Add these lines to your body element:
+			</p>
+			<code>&lt;h1&gt;Heading 1&lt;/h1&gt;<br>&lt;h2&gt;Heading 2&lt;/h2&gt;<br>&lt;h3&gt;Heading 3&lt;/h3&gt;<br>&lt;h4&gt;Heading 4&lt;/h4&gt;<br>&lt;h5&gt;Heading 5&lt;/h5&gt;<br>&lt;h6&gt;Heading 6&lt;/h6&gt;</code>
+			<p>
+			Now that we’ve got some content in our document, let’s see what the document looks like in our browser. Save the HTML file in your text editor. If your text editor has a live preview, you can simply click on that button. If your editor doesn’t have a live preview option, you’ll have to open it in your browser. The easiest way to do this is to open your browser, click on <b>Open File</b> in the <b>File</b> menu, navigate to the directory where you saved your document, choose your document and click <b>Open</b>.
+			</p>
+			<p>
+			Notice how we have six different sized headings. We also have the page title showing in the browser tab. From now on, anytime you make changes to the HTML document you should save the file and preview it in your browser, just to make sure that you haven’t made any errors.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Add_Some_Paragraph_Text"  class="main-section">
+		<header>
+		<h2>Add Some Paragraph Text</h2></header>
+		<article>
+			<p>
+			The next thing we’ll do is add some paragraph elements. Paragraphs contain all our basic text content, and can be created using the &lt;p&gt; tag. Adding text to a paragraph element is much the same as writing regular text except for one important difference: the browser will remove any extra spaces or lines when displaying the text. For example, this code:
+			</p>
+			<code>&lt;p&gt;This is<br>a long paragraph.<br>It has<br>many lines<br>of HTML code.<br>&lt;/p&gt;</code>
+			<p>
+			Will actually display as:
+			</p>
+			<div class="example">
+				<p>
+				This is a long paragraph. It has many lines of HTML code.
+				</p>
+			</div>
+			<p>
+			If we want to our code to display on a new line, we can use the &lt;br&gt; <b>page break</b> tag. Anytime we insert this tag into our paragraph code, the following text will start on a new line. The page break tag is always empty, so it doesn’t require a closing tag. If we add some page break tags to the first example, we can make it display on separate lines.
+			</p>
+			<p>
+			Let’s add two paragraphs to our HTML document. We’ll add them below the headings. The first paragraphs will be a simple short paragraph:
+			</p>
+			<code>&lt;p&gt;This is a short paragraph&lt;/p&gt;<br>&lt;p&gt;<br>This is a long paragraph.&lt;br&gt;<br>We’re using page breaks&lt;br&gt;<br>to have it display&lt;br&gt;<br>on four lines.<br>&lt;/p&gt;</code>
+			<p>
+			You can open the file in your browser to make sure it displays properly.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Add_Some_Formatting_To_The_Text"  class="main-section">
+		<header>
+		<h2>Add Some Formatting To The Text</h2></header>
+		<article>
+			<p>
+			There are a number of different elements that let us add formatting to our text. To see what each of these elements does, let’s add an example for each one to our HTML document. We’ll add the following code under our previous paragraph code, and we won’t format the whole sentence, just the relevant part.
+			</p>
+			<code>&lt;p&gt;This is &lt;b&gt;Bold text&lt;/b&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;strong&gt;Important text&lt;/strong&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;i&gt;Italic text&lt;/i&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;em&gt;Emphasized text&lt;/em&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;mark&gt;Marked text&lt;/mark&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;small&gt;Small text&lt;/small&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;del&gt;Deleted text&lt;/del&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;ins&gt;Inserted text&lt;/ins&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;sub&gt;Subscript text&lt;/sub&gt;&lt;/p&gt;<br>&lt;p&gt;This is &lt;sup&gt; Superscript text&lt;/sup&gt;&lt;/p&gt;</code>
+			<p>
+			Some of these elements have identical displays in the browser, but are actually used in different situations. &lt;b&gt; and &lt;strong&gt; will have the same result – bold text – however &lt;strong&gt; is preferred when the text is semantically important. &lt;i&gt; and &lt;em&gt; also have the same result – italic text – however &lt;em&gt; is preferred when the text is semantically important. These two situations can be quite difficult for beginners to understand, and you shouldn’t really worry about them too much at the moment.
+			</p>
+			<p>
+			If you preview the document in a browser, the formatted text should look like this:
+			</p>
+			<div class="example">			
+				<p>This is <b>Bold text</b>.</p>
+				<p>This is <strong>Important text</strong>.</p>
+				<p>This is <i>Italic text</i>.</p>
+				<p>This is <em>Emphasized text</em>.</p>
+				<p>This is <mark>Marked text</mark>.</p>
+				<p>This is <small>Small text</small>.</p>
+				<p>This is <del>Deleted text</del>.</p>
+				<p>This is <ins>Inserted text</ins>.</p>
+				<p>This is <sub>Subscript text</sub>.</p>
+				<p>This is <sup> Superscript text</sup>.</p>
+			</div>
+		</article>
+	</section>
+	
+	<section id="Add_Some_Style_To_The_Text"  class="main-section">
+		<header>
+		<h2>Add Some Style To The Text</h2></header>
+		<article>
+			<p>
+			To add style to our text, we can use the style attribute. You may remember that we put attributes inside the opening tag of an element. Some common properties we can use for style are <b>color</b> for changing the text colors, <b>font-family</b> for changing the text fonts, and <b>font-size</b> for changing text sizes. Let’s add an example of each style property to our HTML document. Add the following code below the formatting example:
+			</p>
+			<code>&lt;p style=”color:red;”&gt;This is red text.&lt;/p&gt;<br>&lt;p style=”font-family:courier;”&gt;This is text using the courier font.&lt;/p&gt;<br>&lt;p style=”font-size:300%;”&gt;This is very large text.&lt;/p&gt;</code>
+			</article>
+	</section>
+	
+	<section id="Create_Some_Lists"  class="main-section">
+		<header>
+		<h2>Create Some Lists</h2></header>
+		<article>
+			<p>
+			The next thing we’re going to practice is adding lists to our HTML document. Lists can be useful for grouping together similar kinds of information to make them easy to read. There are two types of lists – <b>unordered</b> lists and <b>ordered</b> lists. 
+			</p>
+			<p>
+			Unordered lists use the &lt;ul&gt; tag. Unordered list items use the &lt;li&gt; tag. Each item in the list will be displayed with bullets. 
+			</p>
+			<p>
+			Ordered lists use the &lt;ol&gt; tag. Just like unordered list items, ordered list items use the &lt;li&gt; tag. Each item in the list will be displayed with numbers (starting from one). 
+			</p>
+			<p>
+			Let’s add one example of each kind of list to our HTML document. It’s important to remember that both the list and each list item needs to be closed with a closing tag. You should also indent list items to make them more readable. To make our lists more interesting, we’ll make the unordered list a shopping list, the ordered list a list of countries with the largest population. Add this code to the HTML document:
+			</p>
+			<code>&lt;ul&gt;<br>&nbsp;&nbsp;&lt;li&gt;Eggs&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;Bread&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;Bananas&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;Milk&lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;ol&gt;<br>&nbsp;&nbsp;&lt;li&gt;China&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;India&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;United States&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;Indonesia&lt;/li&gt;<br>&lt;/ol&gt;</code>
+			<p>
+			If you check the HTML document in the browser, the lists should look like this:
+			</p>
+			<div class="example">
+				<ul>
+				<li>Eggs</li>
+				<li>Bread</li>
+				<li>Bananas</li>
+				<li>Milk</li>
+				</ul>
+				<ol>
+				<li>China</li>
+				<li>India</li>
+				<li>United States</li>
+				<li>Indonesia</li>
+				</ol>
+			</div>
+			<p>
+			One final thing to remember about <b>lists – lists can be nested.</b> This means you can have lists within lists.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Create_A_Hyperlink"  class="main-section">
+		<header>
+		<h2>Create A Hyperlink</h2></header>
+		<article>
+			<p>
+			<b>Hyperlinks</b> are usually used to link to another internal or external page, but they can actually be used to link to any HTML element. For example, you can link to an image, a sound file, or even a PDF document. We create a hyperlink using the anchor &lt;a&gt; tag. We specify the destination of the link by putting the <b>href</b> attribute inside the opening tag. Here’s the basic syntax for a hyperlink:
+			</p>
+			<code>&lt;a href=“http://www.somewebsite.com”&gt;The Text You Want To Link&lt;/a&gt;</code>
+			<p>
+			The href attribute (the thing you are linking to) doesn’t have to be an external web address. If you’re linking to a local file located on your server, you can simply add the filename and location. You can also specify how the link opens by using a <b>target</b> attribute after the href attribute. The target attribute can use these values:
+			</p>
+			<ul>
+				<li>_blank – Opens the linked document in a new window or tab</li>
+				<li>_self – Opens the linked document in the same window/tab as it was clicked (default)</li>
+				<li>_parent – Opens the linked document in the parent frame</li>
+				<li>_top – Opens the linked document in the full body of the window</li>
+				<li>framename – Opens the linked document in a named frame</li>
+			</ul>
+			<p>
+			Let’s add a hyperlink to our HTML document. For example, this hyperlink will open the Google homepage in a new window:
+			</p>
+			<code>&lt;a href=“http://www.google.com/” target=“_blank”&gt;Google Homepage&lt;/a&gt;</code>
+			<p>
+			Once you’ve added the code, open the HTML document in your browser. You should have a link that looks like this:
+			</p>			
+			<div class="example">
+				<a href=”http://www.google.com/” target=“_blank”>Google Homepage</a>
+			</div>
+		</article>
+	</section>
+	
+	<section id="Add_An_Image"  class="main-section">
+		<header>
+		<h2>Add An Image</h2></header>
+		<article>
+			<p>
+			We can add an image using the &lt;img&gt; tag. The image element is one of the few elements that <b>doesn’t require a closing tag.</b> There are three main attributes we can use with images – the <b>source</b> attribute, the <b>alternative text</b> attribute and the <b>style</b> attribute.
+			</p>
+			<p>
+			The <b>src</b> source attribute is used to define the location of the image we want to display. The location could be the address of a file stored somewhere else on the web, or it could be the location of an image stored on your server. If you want to show an image that is in the same directory as your HTML file, you can simply enter the name of the image file. If the image is located in a different directory or on another server, you have to specify the full address or path of the file.
+			</p>
+			<p>
+			The <b>alt</b> alternative text attribute is used to define some text that will appear if there is a problem displaying your image. This is important because it allows blind and visually impaired people to get some information from your site, and it also helps with Search Engine Optimization (SEO).
+			</p>
+			<p>
+			The <b>style</b> attribute can be used to define the <b>width</b> and <b>height</b> of an image in pixels (px).
+			</p>
+			<p>
+			Let’s add an image to our document. For this example, we’ll use an image that is stored locally on our computer. If you have your own image you’d like to use, <b>put a copy of that image in the same directory as your HTML document.</b>
+			</p>
+			<p>
+			For the src attribute we’ll use the filename of the image (the filename of our image is cutedog.jpg), for the alt description we’ll use “a cute dog”, and we’ll set the image size as 400 x 400 pixels.
+			</p>
+			<code>&lt;img src=”cutedog.jpg” alt=”a cute dog” style=”width:400px;height:400px;”&gt;</code>
+			<p>
+			Preview the document in your browser, you be able to see the image.
+			</p>
+		</article>
+	</section>
+	
+	<section id="Create_A_Table"  class="main-section">
+		<header>
+		<h2>Create A Table</h2></header>
+		<article>
+			<p>
+			Tables in HTML are great for displaying tabular data, such as an address book or a list of product descriptions and prices. Although tables are good for keeping things organized, tables should only be used for displaying data, not for defining the layout of a page. Creating tables can be a little confusing at first. The best way to learn tables is to create an example.
+			</p>
+			<p>
+			We first create a table using the <b>&lt;table&gt;</b> tag. We then need to create our table row by row using the <b>&lt;tr&gt;</b> table row tag for each row. In the first row, we can use the <b>&lt;th&gt;</b> table heading tag to define the heading for each column. In each following row, we use the <b>&lt;td&gt;</b> table data tag to define the data for each cell. Each element should be indented to make our table code easy to read.
+			</p>
+			<p>
+			Let’s practice tables by creating a short address book. First, add a table opening and closing tag to the HTML document. We’re going to have four rows in our table – one heading row and three data rows – so let’s add four table row tags <b>inside the table element</b> (don’t forget to indent).In the first row, we’re going to add three heading using table heading tags – First Name, Last Name and Address. In each following row, we’re going to add the data for each entry. 
+			</p>
+			<code>&lt;table&gt;<br>
+				&nbsp;&nbsp;&lt;tr&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;First Name&lt;/th&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Last Name&lt;/th&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Address&lt;/th&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&nbsp;&nbsp;&lt;tr&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Mary&lt;/td&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Smith&lt;/td&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;123 Main Street&lt;/td&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&nbsp;&nbsp;&lt;tr&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;John&lt;/td&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Green&lt;/td&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;463 Church Street&lt;/td&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&nbsp;&nbsp;&lt;tr&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Sally&lt;/td&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Jones&lt;/td&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;867 Park Avenue&lt;/td&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&lt;/table&gt;
+			</code>
+			<p>
+			When you view the document in the browser, the table should look like this:
+			</p>
+			<div class="example">
+				<table>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Address</th>
+					</tr>
+					<tr>
+						<td>Mary</td>
+						<td>Smith</td>
+						<td>123 Main Street</td>
+					</tr>
+					<tr>
+						<td>John</td>
+						<td>Green</td>
+						<td>463 Church Street</td>
+					</tr>
+					<tr>
+						<td>Sally</td>
+						<td>Jones</td>
+						<td>867 Park Avenue</td>
+					</tr>
+				</table>
+			</div>
+		</article>
+	</section>
+	
+	<section id="Add_A_Quotation"  class="main-section">
+		<header>
+		<h2>Add A Quotation</h2></header>
+		<article>
+			<p>
+			Quotations can be used to highlight an important quote contained within some text. There are two types of quotations – regular <b>quotations</b> and <b>block quotations.</b> Regular quotations use the <b>&lt;q&gt;</b> tag and simply add quotation marks around everything inside the element. At first, using this element may seem unnecessary as we can simply use regular quotation marks in the text. But the quotation element becomes important when we start styling our page with CSS. Block quotations use the <b>&lt;blockquote&gt;</b> tag and create a stylish indented block of text.
+			</p>
+			<p>
+			Let’s add one of each type of quote to our document. For the regular quotation, add this code to the document:
+			</p>
+			<code>&lt;p&gt;This is an example of a regular quote – &lt;q&gt;to be or not to be.&lt;/q&gt;&lt;/p&gt;</code>
+			<p>
+			For the block quotation, let’s add a paragraph from the Lorem Ipsum. The <b>Lorem Impsum</b> is a piece of classical Latin text that is often used by web developers as a <b>placeholder.</b> When web developers are creating a website but don’t know what content will be used on the site, they often add text from the Lorem Ipsum.
+			</p>
+			<p>
+			Add this code to the document:
+			</p>
+			<code>&lt;p&gt;This is an example of a block quotation – &lt;blockquote&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/blockquote&gt;&lt;p&gt;</code>
+			<p>
+			When you preview the document in the browser, the quotations should look like this:
+			</p>
+			<div class="example">
+				<p>This is an example of a regular quote – <q>to be or not to be.</q></p>
+				<p>This is an example of a block quotation – <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</blockquote><p>
+			</div>
+		</article>
+	</section>
+	
+		<section id="Add_A_Comment"  class="main-section">
+		<header>
+		<h2>Add A Comment</h2></header>
+		<article>
+			<p>
+			The final thing we’re going to learn about is comments. <b>Comments</b> are a special kind of element that can be included in any part of the HTML document, <b>but will not be displayed by the browser.</b> The syntax for comments is:
+			</p>
+			<code>&lt;!– Write your comments here –&gt;</code>
+			<p>
+			Comments have two main purposes:
+			</p>
+			<ul>
+				<li>The first purpose is to add notes to your code. These notes can be for yourself (eg. a note reminding you why you edited a certain section of code), or could be for other people (eg. a note to explain something to another person working on your site).
+				</li>
+				<li>The second purpose is to debug your code. Debugging means searching for and fixing problems with your code. If you have a problem with your code and you think you’ve figured out what is causing the problem, it’s much easier to test your theory by commenting out the code instead of deleting it.
+				</li>
+			</li>
+		</article>
+	</section>
+	
+		<section id="conclusion"  class="main-section">
+		<header>
+		<h2>Conclusion</h2></header>
+		<article>
+			<p>
+			After completing this tutorial, you should have a solid foundation for coding in HTML. You should be able to open the source code of any page on the web and be able to identify certain HTML features and know how they affect what is displayed in the browser window. You should be able to identify images, tables, lists, comments and many other HTML elements.
+			</p>
+			<p>
+			The next step is to practice what you’ve learned by coding your own page.
+			</p>
+			<p>
+			Once you’re confident in your HTML skills, you can move on to the next step in your web development journey – styling your page with CSS.
+			</p>
+		</article>
+	</section>
+	
+	<section id="references"  class="main-section">
+		<header>
+		<h2>References</h2></header>
+		<article>
+			<p>
+			Text from https://www.theblogstarter.com/html-for-beginners/
+			</p>
+			<p>
+			&copy GochaUgulava, 2020. freeCodeCamp Responsive Web Design Challenge. BitCamp-IIstage.
+			</p>
+		</article>
+	</section>
+
+
+</main>
+
+</body>
+</html>

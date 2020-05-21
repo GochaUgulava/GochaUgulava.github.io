@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+	<meta charset="utf-8">
+
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+	
+	html {
+	font-size: 10px;
+	background-image: linear-gradient(115deg, rgba(23, 23, 114, 0.6), rgba(0, 70, 139, 0.5)),
+					url(bg_survey_form_1280x800.jpg);
+					<!-- https://images.hdqwalls.com/download/abstract-galaxy-4k-16-1280x800.jpg -->
+	 background-size: cover;
+	}
+	
+	body {
+	width: 60%;
+	margin: 50px 20% 20px 20%;
+	font-family: 'Nunito', sans-serif;
+	font-size: 2.5rem;
+	}
+	
+	h1 {
+	font-size: 4.5rem;
+	}
+	
+	p {
+	margin: 0;
+	padding-bottom: 10px;
+	}
+		
+	#title {
+	margin: 0 0 20px 0;
+	padding: 0;
+	text-align: center;
+	color: white;
+	}
+	
+	#description {
+	text-align: center;
+	font-size: 2.5rem;
+	color: white;
+	}
+	
+	#survey-form {
+	background: #000058;
+	color:white;
+	margin: 0;
+	padding: 0;
+	border: 1px solid;
+	border-color: white;
+	border-radius:  1rem;
+	}
+	
+	.container {
+	padding: 20px;
+	margin: 0;
+	}
+
+	#name, #email, #number, #dropdown {
+	width: 100%;
+	height: 4rem;
+	border: 3px solid;
+	border-radius:  1rem;
+	border-color: black;
+	font-size: 2rem;
+	}
+
+	.checkbox, .radio {
+	display: inline-block;
+	min-height: 2rem;
+	min-width: 2rem;
+	}
+	
+	.checkbox-label, .radio-label {
+	margin: 0;
+	padding: 0;
+	}
+
+	#textarea {
+	min-height: 120px;
+	width: 100%;
+	border: 3px solid;
+	border-radius:  1rem;
+	border-color: black;
+	font-size: 2rem;
+	font-color: black;
+	}
+	
+	#submit {
+	display: block;
+	width: 100%;
+	margin-bottom: 25px;
+	padding: 1.5rem;
+	font-size: 2rem;
+	background: orange;
+	color: white;
+	border-radius: 1rem;
+	cursor: pointer;
+	}
+
+	#footer{
+	margin: 10px;
+	color: grey;
+	text-align: left;
+	font-size: 1.5rem;
+	}
+	
+	@media (max-width: 600px) {
+		body {
+		width: 80%;
+		margin: 50px 10% 20px 10%;
+		}
+	}
+	
+</style>
+
+</head>
+
+<body>
+	
+	<header>
+		<h1 id="title">Human & Artificial Intelligence</h1>
+		<p id="description">Please, take a few minutes to answer our questionnaire about
+						the future of Human and Artificial Intelligence</p>
+	</header>
+
+
+<form id="survey-form">
+
+	
+	
+	<div class="container">
+		<label id="name-label" for="name">Name: </label>
+		<input id="name" type="text" placeholder=" Your name here" name="name" required>
+	</div>
+	
+	<div class="container">
+		<label id="email-label" for="email">E-mail: </label>
+		<input id="email" type="email" placeholder=" Type valid e-mail" name= "email" required>
+	</div>
+	
+	<div class="container">
+		<label id="number-label" for="number">Age (optional): </label>
+		<input id="number" type="number" placeholder=" Age" name= "age" min="1" max="100">
+	</div>
+	
+	<div class="container">
+		<label id="dropdown-label" for="dropdown">How do you feel about the spread of 
+		artificial intelligence (AI) technology?</label>
+		<select id="dropdown" name="dropdown" required>
+		  <option value="value1">Positive</option>
+		  <option value="value2">Negative</option>
+		  <option value="value3">Neutral</option>
+		  <option value="value4">Don't know</option>
+		</select>
+	</div>
+
+	<div class="container">
+		<p>Are you ready to personally use services based on AI technology</p>
+		
+		<label class="radio-label" for="radio-1">  
+		<input id="radio-1" class="radio" type="radio" name="radio" value="value1" checked>
+		Yes, I will use actively</label><br>
+		
+		<label class="radio-label" for="radio-2"> 
+		<input id="radio-2" class="radio" type="radio" name="radio" value="value2">
+		Not decided yet</label><br>
+		
+		<label class="radio-label" for="radio-3"> 
+		<input id="radio-3" class="radio" type="radio" name="radio" value="value3">
+		No, I am an active opponent of AI</label>
+
+	</div>	
+		
+	<div class="container">
+		<p>How could artificial intelligence influence the future?</p>
+		
+		<label class="checkbox-label" for="checkbox-1">
+		<input id="checkbox-1" class="checkbox" type="checkbox" name="checkbox" value="value1" />
+		Improve decision-making</label><br>
+		
+		<label class="checkbox-label" for="checkbox-2">
+		<input id="checkbox-2" class="checkbox" type="checkbox" name="checkbox" value="value2" />
+		Facilitate and simplify work for humans</label><br>
+		
+		<label class="checkbox-label" for="checkbox-3">
+		<input id="checkbox-3" class="checkbox" type="checkbox" name="checkbox" value="value3" />
+		Will be used to solve complex problems</label><br>
+		
+		<label class="checkbox-label" for="checkbox-4">
+		<input id="checkbox-4" class="checkbox" type="checkbox" name="checkbox" value="value4" />
+		Will cause job loss</label><br>
+		
+		<label class="checkbox-label" for="checkbox-5">
+		<input id="checkbox-5" class="checkbox" type="checkbox" name="checkbox" value="value5" />
+		Decrease personal privacy</label>
+		
+	</div>
+	
+	<div class="container">
+		<p>Any additional comments?</p>
+		<textarea id="textarea"  placeholder="Enter your comment here..."></textarea>
+	</div>
+	
+	<div class="container">
+		<button id="submit" type="submit">Submit</button>
+	</div>
+	
+
+</form>
+
+<footer id="footer">
+<small>&copy GochaUgulava, 2020. freeCodeCamp Responsive
+Web Design Challenge. BitCamp-IIstage.</small>
+</footer>
+</body>
+</html>
