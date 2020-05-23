@@ -207,64 +207,80 @@
 
 	
 /* Media query */
-	@media (max-width: 600px) {
+	@media (max-width: 800px){
 	
-	h1 {
-	font-size: 6rem;
-	}
-	
-	h2 {
-	font-size: 5rem;
-	}
-	
-	h3 {
-	font-size: 4rem;
-	}
-	
-	h4 {
-	font-size: 2rem;
-	}
-	
-	#navbar {
-	position: absolute;
-	display: block;
-	padding: 1rem;
-	text-align: center;
-	}
-	
-	.nav-link {
-	display: block;
-	font-size: 1.5rem;
-	padding: 1rem;
-	}
-	
-	#pass {
-	height: 12rem;
-	}
-	
-	#welcome-section, #skills, #projects, #contact {
-	height: auto;
-	}
+		h1{
+			font-size: 5rem;
+		}
 		
-	#list-of-skills {
-	width:80%;
-	margin-left: 10%;
-	}
+		h2{
+			font-size: 4rem;
+		}
+		
+		h3{
+			font-size: 3rem;
+		}
+		
+		h4{
+			font-size: 2rem;
+		}
+		
+		.section-title{
+			padding-top: 2rem;
+		}
+		
+		#navbar{
+			position: absolute;
+			text-align: center;
+			overflow: hidden;
+		}
+		
+		.nav-link{
+			display: block;
+			font-size: 1rem;
+			padding: 0.5rem;
+		}
+		
+		#welcome, #skills, #projects, #contacts{
+			height: auto;
+		}
+		
+		#welcome-text{
+			padding-top: 15rem;
+			padding-bottom: 5rem;
+		}
+		
+		#skill-container{
+			width:80%;
+			margin-left: 10%;
+			padding-bottom: 5rem;
+		}
 	
-	#project-tile-container {
-	display: block;
-	}
+		#skill-container p{
+			font-size: 1rem;
+		}
 	
-	.project-tile {
-	width:80%;
-	margin-top: 3rem;
-	margin-left: 10%
-	}
+		#project-tile-container{
+			display: block;
+			padding-bottom: 5rem;
+		}
 	
-	#links {
-	width: 80%;
-	display: block;
-	}
+		.project-tile{
+			max-width: 24rem;
+			height: 80vh; 
+			margin: 3vw auto;
+		}
+	
+		#contact-body{
+			display: block;
+			height: auto; 
+			font-size: 2rem;
+			padding-bottom: 5rem;
+		}
+	
+		#contact-img{
+			max-width: 10rem;
+		}
 		
 	}
 	
