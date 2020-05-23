@@ -207,7 +207,7 @@
 
 	
 /* Media query */
-	@media (max-width: 800px){
+	@media only screen and (max-width: 800px){
 	
 		h1{
 			font-size: 5rem;
