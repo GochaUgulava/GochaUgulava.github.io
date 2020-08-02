@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+body {
+	font-size: 10px;
+	font-family: 'Nunito', sans-serif;
+	background-image: linear-gradient(115deg, rgba(23, 23, 114, 0.8), rgba(0, 70, 139, 0.6)), url("../images/math-bg.jpg");
+	background-attachment: fixed;
+	color: rgb(255,255,255);
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+.section-title {
+	display: block;
+    padding: 2rem 0 0 4rem;
+    font-size: 3rem;
+    margin: 4rem;
+}
+
+/* MENU */
+
+#menu {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-title {
+    background-image: none; 
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0;
+    margin: 2rem;
+    outline:none;
+    cursor: pointer;
+}
+
+#menu-list {
+    display: none;
+    width: 300px;
+    background: navy;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-items {
+    padding: 2rem;
+    border: 2px solid white;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+    z-index: 11;
+}
+
+.menu-items:hover {
+    background: white;
+    color: navy;
+}
+
+/*  WELCOME */
+    
+#welcome-1 {
+    font-size: 8rem;
+    text-align: center;
+}
+        
+#welcome-2 {
+    font-size: 6rem;
+    text-align: center;
+}
+
+#welcome-section {
+	height: 100vh;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SKILLS */
+	
+#skills-section {
+    background: navy;
+    padding-top: 1rem;
+    padding-bottom: 10%;
+}
+	
+#list-of-skills {
+	width:60%;
+    margin-top:5%;
+    margin-left: 20%;
+    font-size: 2rem;
+}
+	
+#list-of-skills li {
+	margin:0;
+	padding: 0 0 2rem 2rem;
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+}
+	
+.ico {
+	margin: 0 2rem 0 0;
+	padding: 0;
+	width: 5rem;
+	height: 3rem;
+	border-radius: 1rem;
+	background: white;
+}
+
+/* CERTIFICATES */
+
+#cert-tile-container {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 3vw;
+    padding-bottom: 10%;
+}
+
+.cert-tile-link {
+    display: block;
+    height: 18rem;
+    cursor: pointer;
+    text-decoration: none; 
+}
+
+.cert-img {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.cert-tile-text {
+    position: relative;
+    width: 80%;
+    margin-top: -60%;
+    margin-left: 10%;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: navy;
+    text-decoration: none;
+    
+}
+
+.cert-tile-link:hover {
+    transform: scale(0.95);
+}
+
+/* PUBLICATIONS */
+	
+#publications-section {
+    background: navy;
+    padding-top: 1rem;
+    padding-bottom: 10%;
+}
+	
+#list-of-publications {
+	width:60%;
+    margin-top:5%;
+    margin-left: 20%;
+    font-size: 1.5rem;
+}
+	
+#list-of-publications li {
+	margin:0;
+	padding: 0 0 2rem 2rem;
+}
+
+/* PROJECTS */
+
+#project-tile-container {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 3vw;
+    padding-bottom: 10%;
+}
+
+.project-image {
+    width: 90%;
+    height: 50%;
+    border-radius:  10%;
+    margin: 5%;
+}
+
+.tile-link {
+    display: block;
+    cursor: pointer;
+    border: 3px solid  #000;
+    border-radius:  10%;
+    width: 100%;
+    height: 20rem; 
+    font-size: 1.5rem;
+    text-align: center;
+    background: rgb(229, 83, 0);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 5px 5px 10px #fff;
+}
+
+.tile-link:hover {
+    background: rgb(0, 0, 139);
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+/* CONTACTS */
+	
+#contacts-section {
+    height: 100hv;
+    background: navy;
+    padding-top: 1rem;
+    padding-bottom: 10%;
+}
+	
+#list-of-contacts {
+    margin-top:5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+	
+#list-of-contacts li {
+	margin:0;
+	padding: 1rem;
+	list-style-type: none;
+    font-size: 3rem;
+}
+
+#list-of-contacts li a {
+    color: white;
+}
+
+#list-of-contacts li a:hover {
+    color: red;
+}
+
+/*  Footer */
+
+#footer {
+	display: block;
+	text-align: left;
+	margin:0;
+	padding: 0;
+	font-size: 1rem;
+	color: grey;
+	background: rgb(240, 248, 255);
+}
