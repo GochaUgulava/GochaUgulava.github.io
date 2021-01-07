@@ -17,52 +17,30 @@
      
     <script type="text/babel">
 
-
-        class Menu extends React.Component {
-            constructor(props) {
+            
+        
+		class AISkills extends React.Component {
+            constructor(props){
                 super(props);
-                this.clickMenu = this.clickMenu.bind(this);
             }
 
-            clickMenu() {
-                let value = document.getElementById('menu-title').getAttribute('value');
-                if (value==="on") {
-                    document.getElementById("menu-title").innerHTML = '<i class="fa fa-bars" aria-hidden="true"></i>'
-                    document.getElementById("menu-title").value = "off";
-                    document.getElementById("menu-list").style.display = "none";
-                }else{
-                    document.getElementById("menu-title").innerHTML = '<i class="fa fa-times" aria-hidden="true"></i></div>';
-                    document.getElementById("menu-title").value = "on";
-                    document.getElementById("menu-list").style.display = "block";
-                    var pos = -300;
-                    var id = setInterval(()=>{
-                        if (pos == 0) {
-                            clearInterval(id);
-                        } else {
-                            pos = pos + 3; 
-                            document.getElementById("menu-list").style.marginLeft = pos + "px"; 
-                        }
-                    }, 5);
-                }
-            }
-
-            render() {
+            render(){
                 return (
-                    <div id="menu">
-                        <button class="section-title" id="menu-title" value="off" onClick={this.clickMenu}>
-                            <i class="fa fa-bars" aria-hidden="true"></i></button>
-                        <div id="menu-list">
-                            {this.props.data.map((item, i)=>(
-                                <a href={item.url} onClick={this.clickMenu}><div className="menu-items" id={"menu-item-" + i + 1}>
-                                    <i className={item.fa} aria-hidden="true"></i> {item.name}</div></a>
-                                ))}
-                        </div>
-                    </div>
+                    <div id="skills-section">
+		                <div class="section-title" id="skills">AI applications in Economics</div>
+                        <ul id="list-of-skills">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <li id={"skill-"+i}><img className="ico" src={item.img} />{item.text}</li>
+                                );}
+                            )}
+                        </ul>
+		        	</div>
                 );
             }
         }
-        
-        
+		
+		
         class Skills extends React.Component {
             constructor(props){
                 super(props);
@@ -71,7 +49,7 @@
             render(){
                 return (
                     <div id="skills-section">
-		                <div class="section-title" id="skills">fields of activities and interests</div>
+		                <div class="section-title" id="skills">WebDev</div>
                         <ul id="list-of-skills">
                             {this.props.data.map(function(item, i){
                                 return (
@@ -84,6 +62,31 @@
             }
         }
 
+
+		class AICertificates extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="certificates-section">
+                        <div class="section-title" id="certificates">certificates</div>
+                        <div id="cert-tile-container">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <a href={item.url} target="_blank" className="cert-tile-link" id={item.i}>
+                                        <img className="cert-img" src="images/cert.png" />
+                                        <div className="cert-tile-text">{item.name}<br />{item.provider}</div>
+                                    </a>
+                                )}
+                            )}
+                        </div>
+                    </div>
+                );
+            }
+
+        }
 
         class Certificates extends React.Component {
             constructor(props){
@@ -132,6 +135,31 @@
             }
         }
 
+
+		class AIProjects extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="projects-section">
+                        <div class="section-title" id="projects">data project notebooks</div>
+                        <div id="ai-project-tile-container">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <a href={item.url} target="_blank" className="ai-tile-link" id={item.i}>
+                                            <img className="ai-project-image" src={item.img} /><div className="ai-project-name">{item.name}</div>
+									</a>
+                                )}
+                            )}
+                        </div>
+                    </div>
+                );
+            }
+
+        }
+
     
         class Projects extends React.Component {
             constructor(props){
@@ -142,16 +170,23 @@
                 return (
                     <div id="projects-section">
                         <div class="section-title" id="projects">projects</div>
-                        <div id="project-tile-container">
-                            {this.props.data.map(function(item, i){
-                                return (
-                                    <a href={item.url} target="_blank" className="tile-link" id={item.i}>
-                                            <img className="project-image" src={item.img} />
-                                            {item.name}<br />{item.info}
-                                    </a>
-                                )}
-                            )}
-                        </div>
+						<div class="tile-all">
+						{this.props.data.map(function(item, i){
+								return (
+									<div class="tile">
+										<div class="project-tile-container">
+											<a href={item.url} target="_blank" className="tile-link" id={item.i}>
+													<img className="project-image" src={item.img} />
+													{item.name}<br />{item.info}
+											</a>
+										</div>
+										<div class="git-tile-container">
+											<a href={item.git} target="_blank" className="git-link">code: git</a>
+										</div>
+									</div>
+								)}
+						)}
+						</div>
                     </div>
                 );
             }
@@ -159,71 +194,38 @@
         }
 
 
-        class Contacts extends React.Component {
-            constructor(props){
-                super(props);
-            }
-
-            render(){
-                return (
-                    <div id="contacts-section">
-		                <div class="section-title" id="contacts">contacts</div>
-                        <ul id="list-of-contacts">
-                            {this.props.data.map(function(item, i){
-                                return (
-                                    <li id={"contacts-"+i}>
-                                        <div><i className={item.fa} aria-hidden="true"></i>&nbsp;&nbsp;
-                                        <a href={item.url} target="_blank">{item.text}</a></div>
-                                    </li>
-                                );}
-                            )}
-                        </ul>
-		        	</div>
-                );
-            }
-        }
-
-
+        
         class App extends React.Component {
             constructor(props){
                 super(props);
                 this.state = {
-                    contactsData: [
-                        {text:'Github',
-                        fa: 'fa fa-github',
-                        url: 'https://github.com/GochaUgulava'},
-                        {text:'CodePen',
-                        fa: 'fa fa-codepen',
-                        url: 'https://codepen.io/gochaugulava'},
-                        {text:'freeCodeCamp',
-                        fa: 'fa fa-free-code-camp',
-                        url: 'https://www.freecodecamp.org/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d'},
-                        {text:'Facebook',
-                        fa: 'fa fa-facebook-official',
-                        url: 'https://www.facebook.com/gocha.ugulava'},
-                        {text:'e-mail',
-                        fa: 'fa fa-at',
-                        url: 'mailto:gochaugulava@gmail.com'},
-                    ],
                     publicationsData: [
                         'Gocha Ugulava -  Use of Artificial Neural Networks to Predict Territorial Economic Indicators. Globalization And Business, #8, 2019, pp. 143-146',
                         'Niko Chikhladze, Gocha Ugulava - The Role of Strategic Planning for Local Territorial Development. Innovative Economics and Management N1, 2016 pp. 121-128.',
                         'Tskaltubo Municipality Economic Development Plan. 2007 50 p. Gocha Ugulava - Coordinator of The Working Group, Author. Published in the Frames of CHF-Georgia and USAID-Funded Project.',
                         'Tskaltubo District (Information-Analytical Review) - Guram Sopromadze, Gocha Ugulava. 36 p. 2005 Published by the Tskaltubo District Councils Association, Funded by the United States Agency for International Development and Urban Institute.'
                     ],
-                    skillsData: [
+					AIskillsData: [
                         {img: 'images/data.svg',
-                        text: "data analytics and visualization"},
+                        text: "data analytics, visualization"},
                         {img: 'images/nn.svg',
+                        text: "machine learning, statistical analysis"},
+                        {img: 'images/ai.jpg',
                         text: "neural networks, deep learning"},
-                        {img: 'images/ai.svg',
-                        text: "artificial intelligence in economics"},
-                        {img: 'images/webdev.svg',
-                        text: "webdev - HTML, CSS, JavaScript, React, Redux, Bootstrap, jQuery, Sass, Django"},
-                        {img: 'images/prog.svg',
-                        text: "programming - Python, R, C, Fortran, Basic"}
+						{img: 'images/code.png',
+                        text: "Python, R, C, Fortran"},
+						{img: 'images/frameworks.png',
+                        text: "numpy, pandas, scipy, scikit-learn, tensorflow, keras, matplotlib, seaborn, paygal"}
                     ],
-                    certificatesData: [
+                    skillsData: [
+                        {img: 'images/webdev.svg',
+                        text: "MERN - Full Stack"},
+                        {img: 'images/prog.svg',
+                        text: "frontend - HTML, CSS, JavaScript, React, Redux, Bootstrap, jQuery, Sass"},
+						{img: 'images/back.png',
+                        text: "backend - NodeJS, Express, Django, API, Microservices, MongoDB, Mongoose, SQLite"},
+					],
+					AIcertificatesData: [
                         {name: "Programming on Python (with honor)",
                         provider: "Stepik",
                         url: "https://stepik.org/certificate/e7cb331b390d646e02a124dd94fd74db034f394b.pdf"},
@@ -239,6 +241,14 @@
                         {name: "Data Analysis in R (with honor)",
                         provider: "Stepik",
                         url: "https://stepik.org/certificate/e82d53a6ba612df0e7f10daa97d22cc0290a595b.pdf"},
+						{name: "Scientific Computing with Python",
+                        provider: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/scientific-computing-with-python-v7"},
+						{name: "Data Analysis with Python ",
+                        provider: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/data-analysis-with-python-v7"}
+                    ],
+                    certificatesData: [
                         {name: "Computer Science in JavaScript (Golden)",
                         provider: "CodeHS",
                         url: "https://codehs.com/certificate/NgjDiT"},
@@ -250,83 +260,143 @@
                         url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/javascript-algorithms-and-data-structures"},
                         {name: "Front End Libraries",
                         provider: "freeCodeCamp",
-                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/front-end-libraries"}
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/front-end-libraries"},
+						{name: "APIs and Microservices",
+                        provider: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/apis-and-microservices"}
                     ],
                     projectsData: [
                         {name: "Tribute Page - John Conway", 
-                        url: "https://codepen.io/gochaugulava/pen/qBOQaQO", 
-                        img: "images/tribute_page_screenshot.png",
-                        info: "HTML/CSS"},
+                        url: "https://codepen.io/gochaugulava/full/qBOQaQO", 
+                        img: "images/pr1.png",
+                        info: "HTML/CSS",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/tribute_page"},
                         {name: "Landing Page - Cardiology Clinic",
-                        url: "https://codepen.io/gochaugulava/pen/ZEbVzwb",
-                        img: "images/landing_page_screenshot.png",
-                        info: "HTML/CSS"},
+                        url: "https://codepen.io/gochaugulava/full/ZEbVzwb",
+                        img: "images/pr2.png",
+                        info: "HTML/CSS",
+						git:"https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/landing_page"},
                         {name: "Survey Form - Artifical Intelligence",
-                        url: "https://codepen.io/gochaugulava/pen/VwvVyrv",
-                        img: "images/survey_form_screenshot.png",
-                        info: "HTML/CSS"},
-                        {name: "Technical Documentation - HTML for beginners",
-                        url: "https://codepen.io/gochaugulava/pen/BaovrXN",
-                        img: "images/technical_documentation_screenshot.png",
-                        info: "HTML/CSS"},
+                        url: "https://codepen.io/gochaugulava/full/VwvVyrv",
+                        img: "images/pr3.png",
+                        info: "HTML/CSS",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/survey_form"},
+                        {name: "Technical Doc - HTML for beginners",
+                        url: "https://codepen.io/gochaugulava/full/BaovrXN",
+                        img: "images/pr4.png",
+                        info: "HTML/CSS",
+						git:"https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/technical_documentation"},
                         {name: "Random Quote Machine",
-                        url: "https://codepen.io/gochaugulava/pen/ExPOoNK",
-                        img: "images/random_quote_machine_screenshot.png",
-                        info: "HTML/CSS/JS/Ajax"},
+                        url: "https://codepen.io/gochaugulava/full/ExPOoNK",
+                        img: "images/pr5.png",
+                        info: "HTML/CSS/JS/jQuery",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/random-quote-machine.html"},
                         {name: "Markdown Previewer",
-                        url: "https://codepen.io/gochaugulava/pen/mdVapEM",
-                        img: "images/markdown_previewer_screenshot.png",
-                        info: "HTML/CSS/JS/React"},
+                        url: "https://codepen.io/gochaugulava/full/mdVapEM",
+                        img: "images/pr6.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/markdown-previewer.html"},
                         {name: "Drum Machine",
-                        url: "https://codepen.io/gochaugulava/pen/KKVJZzB",
-                        img: "images/drum_machine_screenshot.png",
-                        info: "HTML/CSS/JS/React"},
+                        url: "https://codepen.io/gochaugulava/full/KKVJZzB",
+                        img: "images/pr7.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/drum-machine.html"},
                         {name: "Simple Calculator",
-                        url: "https://codepen.io/gochaugulava/pen/gOPEdBR",
-                        img: "images/js_calculator_screenshot.png",
-                        info: "HTML/CSS/JS/React"},
+                        url: "https://codepen.io/gochaugulava/full/gOPEdBR",
+                        img: "images/pr8.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/JS%20Calculator.html"},
                         {name: "Pomodoro Clock",
-                        url: "https://codepen.io/gochaugulava/pen/OJMGJBV",
-                        img: "images/pomodoro_clock_screenshot.png",
-                        info: "HTML/CSS/JS/React"}                           
+                        url: "https://codepen.io/gochaugulava/full/OJMGJBV",
+                        img: "images/pr9.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/pomodoro-clock.html"},
+						{name: "Timestamp Microservice",
+                        url: "https://backend-timestamp.glitch.me",
+                        img: "images/pr10.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/Timestamp_Microservice"},
+						{name: "Request Header Parser Microservice",
+                        url: "https://backend-request-header-parser.glitch.me",
+                        img: "images/pr11.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/Request_Header_Parser_Microservice"},
+						{name: "URL Shortener Microservice",
+                        url: "https://backend-url-shortener.glitch.me",
+                        img: "images/pr12.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/URL_Shortener_Microservice"},
+						{name: "Exercise Tracker",
+                        url: "https://backend-exercise-tracker.glitch.me",
+                        img: "images/pr13.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/Exercise_Tracker"},
+						{name: "File Metadata Microservice",
+                        url: "https://backend-file-metadata.glitch.me",
+                        img: "images/pr14.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/File_Metadata_Microservice"}						
                     ],
-                    menuData: [
-                        {name: "home",
-                        fa: "fa fa-home",
-                        url: "#welcome-section"},
-                        {name: "skills",
-                        fa: "fa fa-check-square",
-                        url: "#skills"},
-                        {name: "certificates",
-                        fa: "fa fa-certificate",
-                        url: "#certificates"},
-                        {name: "publications",
-                        fa: "fa fa-pencil-square",
-                        url: "#publications"},
-                        {name: "projects",
-                        fa: "fa fa-briefcase",
-                        url: "#projects"},
-                        {name: "contacts",
-                        fa: "fa fa-envelope",
-                        url: "#contacts"}
-                    ]
+					AIprojectsData: [
+                        {name: "Demographic data anaylizer", 
+                        url: "https://github.com/GochaUgulava/FCC_Data_Analysis_with_Python/blob/main/demographic_data_anaylizer.ipynb", 
+                        img: "images/nb1.png"},
+						{name: "Mean, variance, standard deviation, max, min, and sum", 
+                        url: "https://github.com/GochaUgulava/FCC_Data_Analysis_with_Python/blob/main/mean_var_std.ipynb", 
+                        img: "images/nb2.png"},
+						{name: "Medical data visualizer", 
+                        url: "https://github.com/GochaUgulava/FCC_Data_Analysis_with_Python/blob/main/medical_data_visualizer.ipynb", 
+                        img: "images/nb3.png"},
+						{name: "Sea level predictor", 
+                        url: "https://github.com/GochaUgulava/FCC_Data_Analysis_with_Python/blob/main/sea_level_predictor.ipynb", 
+                        img: "images/nb4.png"},
+						{name: "Page view time series visualizer", 
+                        url: "https://github.com/GochaUgulava/FCC_Data_Analysis_with_Python/blob/main/time_series_visualizer.ipynb", 
+                        img: "images/nb5.png"},
+						{name: "Sitka weather analysis", 
+                        url: "https://github.com/GochaUgulava/FCC_Data_Analysis_with_Python/blob/main/sitka_weather_analysis.ipynb", 
+                        img: "images/nb6.png"},
+						{name: "Random walk process", 
+                        url: "https://github.com/GochaUgulava/FCC_Data_Analysis_with_Python/blob/main/random_walk.ipynb", 
+                        img: "images/nb7.png"},
+						{name: "Linear regression with tensorflow", 
+                        url: "https://github.com/GochaUgulava/Data_Projects_with_TensorFlow/blob/main/lr_with_tf_estimator.ipynb", 
+                        img: "images/nb8.png"}
+					]
                 }
             }
 
             render(){
                 return(
                     <div id="portfolio">
-                        <Menu data={this.state.menuData} />
+                        <div id="menu">
+							<ul>
+								<li><a href="#welcome-section"><i className='fa fa-home' aria-hidden="true"></i> Home</a></li>
+								<li><a href="#ai"><i className='fa fa-cogs' aria-hidden="true"></i> AI</a></li>
+								<li><a href="#web"><i className='fa fa-code' aria-hidden="true"></i> Web</a></li>
+								<div class="vl"></div>
+								<li><a href="https://github.com/GochaUgulava/DataBlog/blob/main/d.ipynb"><i className='fa fa-line-chart' aria-hidden="true"></i> DataBlog</a></li>
+								<li><a href="images/qr.jpg" download target="_blank"><i className='fa fa-qrcode' aria-hidden="true"></i> QR-code</a></li>
+								<li><a href="https://github.com/GochaUgulava" target="_blank"><i className='fa fa-github' aria-hidden="true"></i> Git</a></li>
+								<li><a href="mailto:gochaugulava@gmail.com"  target="_blank"><i className='fa fa-at' aria-hidden="true"></i> e-Mail</a></li>
+							</ul>
+						</div>
                         <div id="welcome-section">
                             <div id="welcome-1">Hello! Welcome!</div>
                             <div id="welcome-2">I'm Gocha Ugulava</div>
                         </div>
-                        <Skills data={this.state.skillsData} />
-                        <Certificates data={this.state.certificatesData} />
-                        <Publications data={this.state.publicationsData} />
-                        <Projects data={this.state.projectsData} />
-                        <Contacts data={this.state.contactsData} />
-                        <footer id="footer"><small>GochaUgulava, 2020. Personal Portfolio, v3.0</small></footer>
+						<div id="ai">
+							<AISkills data={this.state.AIskillsData} />
+							<AICertificates data={this.state.AIcertificatesData} />
+							<AIProjects data={this.state.AIprojectsData} />
+							<Publications data={this.state.publicationsData} />
+						</div>
+						<div id="web">
+							<Skills data={this.state.skillsData} />
+							<Certificates data={this.state.certificatesData} />
+							<Projects data={this.state.projectsData} />
+						</div>
+                        <footer id="footer"><small>GochaUgulava, 2020-2021. Personal Portfolio, v4.0</small></footer>
                     </div>
                 );
             }
