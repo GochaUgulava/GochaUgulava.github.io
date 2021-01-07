@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 	font-size: 10px;
 	font-family: 'Nunito', sans-serif;
@@ -22,47 +26,61 @@ a {
     margin: 4rem;
 }
 
+#ai {
+	background: navy;
+}
+
+#web {
+	background: #03a7ff;
+}
+
 /* MENU */
 
 #menu {
-    position: fixed;
-    margin: 0;
-    padding: 0;
+	overflow: hidden;
+	position: fixed; 
+	top: 0; 
+	width: 100%;
+	
 }
 
-#menu-title {
-    background-image: none; 
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 0;
-    margin: 2rem;
-    outline:none;
-    cursor: pointer;
+#menu ul {
+	list-style: none; 
+	margin: 0;  
+	padding-left: 0; 
+	margin-top:0; 
+	background:#FF4444;  
+	height: 30px; 
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	-webkit-justify-content: space-between; /* Safari */
+	justify-content: space-between;
 }
 
-#menu-list {
-    display: none;
-    width: 300px;
-    background: navy;
-    cursor: pointer;
-    z-index: 10;
+#menu a {
+	text-decoration: none;  
+	background:#FF4444;  
+	color:#fff;  
+	padding:0px 15px;  
+	font-family: arial;
+	font-size: 1rem;	
+	line-height:30px;  
+	display: block; 
+	border-right: 1px solid #F36262; 
+	-moz-transition: all 0.3s 0.01s ease;  
+	-o-transition: all 0.3s 0.01s ease;
+	-webkit-transition: all 0.3s 0.01s ease;
 }
 
-.menu-items {
-    padding: 2rem;
-    border: 2px solid white;
-    font-size: 2rem;
-    text-decoration: none;
-    padding: 1rem;
-    color: white;
-    z-index: 11;
+#menu a:hover {
+	background:#D43737; 
 }
 
-.menu-items:hover {
-    background: white;
-    color: navy;
+.vl {
+    border-left: 6px solid white;
+    height: 100%;
 }
+
 
 /*  WELCOME */
     
@@ -88,11 +106,11 @@ a {
 /* SKILLS */
 	
 #skills-section {
-    background: navy;
     padding-top: 1rem;
-    padding-bottom: 10%;
+
 }
-	
+
+
 #list-of-skills {
 	width:60%;
     margin-top:5%;
@@ -112,20 +130,22 @@ a {
 	margin: 0 2rem 0 0;
 	padding: 0;
 	width: 5rem;
-	height: 3rem;
+	height: 5rem;
+	border-style: solid;
+	border-width: 1rem;
 	border-radius: 1rem;
+	border-color: white;
 	background: white;
 }
 
 /* CERTIFICATES */
 
 #cert-tile-container {
-    width: 95%;
+	width: 95%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     grid-gap: 3vw;
-    padding-bottom: 10%;
 }
 
 .cert-tile-link {
@@ -136,15 +156,15 @@ a {
 }
 
 .cert-img {
-    width: 100%;
+    width: 80%;
     height: auto;
     z-index: -1;
 }
 
 .cert-tile-text {
     position: relative;
-    width: 80%;
-    margin-top: -60%;
+    width: 60%;
+    margin-top: -50%;
     margin-left: 10%;
     font-size: 1rem;
     text-align: center;
@@ -180,13 +200,31 @@ a {
 
 /* PROJECTS */
 
-#project-tile-container {
+.tile-all {
     width: 95%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     grid-gap: 3vw;
-    padding-bottom: 10%;
+	padding-bottom: 10%;
+}
+
+.tile {
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	flex-direction: column;
+	-webkit-flex-direction: column; /* Safari */
+}
+
+.project-tile-container {
+    border: 3px solid  #000;
+    border-radius:  10% 10% 0 0;
+    width: 100%;
+    height: 15rem; 
+	cursor: pointer;
+	background: rgb(229, 83, 0);
+	box-shadow: 5px 5px 10px #fff;
+	text-align: center;
 }
 
 .project-image {
@@ -197,56 +235,90 @@ a {
 }
 
 .tile-link {
-    display: block;
-    cursor: pointer;
-    border: 3px solid  #000;
-    border-radius:  10%;
-    width: 100%;
-    height: 20rem; 
     font-size: 1.5rem;
-    text-align: center;
-    background: rgb(229, 83, 0);
     color: #fff;
     text-decoration: none;
+}
+
+.project-tile-container:hover {
+    background: rgb(0, 0, 139);
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
+.git-tile-container {
+	cursor: pointer;
+    border: 3px solid  #000;
+    width: 100%;
+    height: 2.5rem; 
+    text-align: center;
+    background: rgb(229, 83, 0);
+	border-radius:  0 0 50% 50%;
     box-shadow: 5px 5px 10px #fff;
 }
 
-.tile-link:hover {
+.git-link {
+	font-size: 1.5rem;
+    color: white;
+	font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.git-tile-container:hover {
     background: rgb(0, 0, 139);
     transform: scale(0.95);
     box-shadow: none;
 }
 
-/* CONTACTS */
-	
-#contacts-section {
-    height: 100hv;
-    background: navy;
-    padding-top: 1rem;
-    padding-bottom: 10%;
-}
-	
-#list-of-contacts {
-    margin-top:5%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-	
-#list-of-contacts li {
-	margin:0;
-	padding: 1rem;
-	list-style-type: none;
-    font-size: 3rem;
+/* AI - PROJECTS */
+
+#ai-project-tile-container {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 3vw;
+
 }
 
-#list-of-contacts li a {
-    color: white;
+.ai-project-image {
+    width: 40%;
+    height: 80%;
+    border-radius:  10%;
+	border: 3px solid  navy;
+    margin: 0 5%;
+	align-self: center
 }
 
-#list-of-contacts li a:hover {
-    color: red;
+.ai-project-name {
+	align-self: center
 }
+
+.ai-tile-link {
+    display: -webkit-flex; /* Safari */
+	display: flex;
+	-webkit-justify-content: space-between; /* Safari */
+	justify-content: space-between;
+    cursor: pointer;
+    border: 3px solid  navy;
+    #border-radius:  10%;
+    width: 100%;
+    height: 10rem; 
+    font-size: 1.5rem;
+    text-align: center;
+    background: white;
+    color: black;
+    text-decoration: none;
+    box-shadow: 5px 5px 10px #fff;
+}
+
+.ai-tile-link:hover {
+	color: red;
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+
 
 /*  Footer */
 
