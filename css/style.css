@@ -31,7 +31,11 @@ a {
 }
 
 #web {
-	background: #03a7ff;
+	background: #082D96;
+}
+
+#other {
+    background: #074D8C;
 }
 
 /* MENU */
@@ -50,7 +54,7 @@ a {
 	padding-left: 0; 
 	margin-top:0; 
 	background:#FF4444;  
-	height: 30px; 
+	height: 50px;
 	display: -webkit-flex; /* Safari */
 	display: flex;
 	-webkit-justify-content: space-between; /* Safari */
@@ -61,9 +65,9 @@ a {
 	text-decoration: none;  
 	background:#FF4444;  
 	color:#fff;  
-	padding:0px 15px;  
+	padding:10px 15px;
 	font-family: arial;
-	font-size: 1rem;	
+	font-size: 1.5rem;
 	line-height:30px;  
 	display: block; 
 	border-right: 1px solid #F36262; 
@@ -74,11 +78,6 @@ a {
 
 #menu a:hover {
 	background:#D43737; 
-}
-
-.vl {
-    border-left: 6px solid white;
-    height: 100%;
 }
 
 
@@ -138,6 +137,21 @@ a {
 	background: white;
 }
 
+#linkmap {
+	width:90%;
+    margin-top:5%;
+    text-align: right;
+}
+
+#linkmap a {
+	width:80%;
+    margin-top:10%;
+    margin-left: 10%;
+    font-size: 2rem;
+    color: #fff;
+    text-align: right;
+}
+
 /* CERTIFICATES */
 
 #cert-tile-container {
@@ -177,6 +191,39 @@ a {
 .cert-tile-link:hover {
     transform: scale(0.95);
 }
+
+
+/* ML CERT */
+
+#mlcert {
+	width:80%;
+    margin-top:5%;
+    margin-left: auto;
+    margin-bottom: 5%;
+    font-size: 1.5rem;
+    display: flex;
+	align-items: center;
+}
+
+
+
+#mlcertimg {
+	margin: 0 2rem 0 0;
+	padding: 0;
+	width: 24rem;
+	height: 16rem;
+	border-style: solid;
+	border-width: 2rem;
+	border-color: white;
+	background: white;
+	box-shadow: 5px 5px 10px #fff;
+}
+
+#mlcertimg:hover {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
 
 /* PUBLICATIONS */
 	
@@ -270,9 +317,18 @@ a {
     box-shadow: none;
 }
 
-/* AI - PROJECTS */
+/* AI - ML - PROJECTS */
 
 #ai-project-tile-container {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 3vw;
+
+}
+
+#ml-project-tile-container {
     width: 95%;
     margin: auto;
     display: grid;
@@ -318,6 +374,46 @@ a {
     box-shadow: none;
 }
 
+
+/*  Other */
+
+#other-section {
+    padding-top: 1rem;
+}
+
+
+#list-of-other {
+	width:90%;
+    margin-top:5%;
+    margin-left: 5%;
+    font-size: 1.5rem;
+}
+
+#list-of-other li {
+	margin:0;
+	padding: 0 0 2rem 2rem;
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+}
+
+.icoother {
+	margin: 0 2rem 0 0;
+	padding: 0;
+	width: 15rem;
+	height: 15rem;
+	border-style: solid;
+	border-width: 1rem;
+	border-radius: 1rem;
+	border-color: white;
+	background: white;
+	box-shadow: 5px 5px 10px #fff;
+}
+
+.icoother:hover {
+    transform: scale(0.95);
+    box-shadow: none;
+}
 
 
 /*  Footer */
