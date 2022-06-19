@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gocha Ugulava - Personal Portfolio</title>
+        <link rel="icon" href="images/favicon.ico">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link  rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+	<div id="bodymain">
+
+        <div id="app"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     
+    <script type="text/babel">
+
+            
+  		
+        class Skills extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="skills-section">
+						<div class="section-title" id="skills">Gocha Ugulava - Dev</div>
+		                <div class="section-title" id="skills">WebDev</div>
+                        <ul id="list-of-skills">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <li id={"skill-"+i}><img className="ico" src={item.img} />{item.text}</li>
+                                );}
+                            )}
+                        </ul>
+		        	</div>
+                );
+            }
+        }
+
+ 
+        class Certificates extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="certificates-section">
+                        <div class="section-title" id="certificates">certificates</div>
+                        <div id="cert-tile-container">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <a href={item.url} target="_blank" className="cert-tile-link" id={item.i}>
+                                        <div className="cert-tile-text">{item.name} - {item.provider}</div>
+                                    </a>
+                                )}
+                            )}
+                        </div>
+                    </div>
+                );
+            }
+
+        }
+
+     
+        class Projects extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="projects-section">
+                        <div class="section-title" id="projects">projects</div>
+						<div class="tile-all">
+						{this.props.data.map(function(item, i){
+								return (
+									<div class="tile">
+										<div class="project-tile-container">
+											<a href={item.url} target="_blank" className="tile-link" id={item.i}>
+													<img className="project-image" src={item.img} />
+													{item.name}<br />{item.info}
+											</a>
+										</div>
+										<div class="git-tile-container">
+											<a href={item.git} target="_blank" className="git-link">code: git</a>
+										</div>
+									</div>
+								)}
+						)}
+						</div>
+                    </div>
+                );
+            }
+
+        }
+
+
+        class Other extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="other-section">
+		                <div class="section-title" id="skills">Other</div>
+                        <ul id="list-of-other">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <li id={"skillother-"+i}>
+                                        <a href={item.url} target="_blank" id={"linkother-"+i}>
+                                            <img className="icoother" src={item.img} /></a>
+                                        {item.name}<br />
+                                        <br />{item.info}<br />Click image for git<br />
+
+                                    </li>
+                                );}
+                            )}
+                        </ul>
+                    </div>
+                );
+            }
+        }
+
+
+        
+        class App extends React.Component {
+            constructor(props){
+                super(props);
+                this.state = {
+                    skillsData: [
+                        {img: 'images/webdev.svg',
+                        text: "MERN - Full Stack"},
+                        {img: 'images/prog.svg',
+                        text: "frontend - HTML, CSS, JavaScript, React, Redux, Bootstrap, jQuery, Sass"},
+						{img: 'images/back.png',
+                        text: "backend - NodeJS, Express, Django, API, Microservices, MongoDB, Mongoose, SQLite"},
+					],
+                    certificatesData: [
+                        {name: "Computer Science in JavaScript (Golden)",
+                        provider: "CodeHS",
+                        url: "https://codehs.com/certificate/NgjDiT"},
+                        {name: "Responsive Web Design",
+                        provider: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/responsive-web-design"},
+                        {name: "JavaScript  Algorithms and Data Structures",
+                        provider: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/javascript-algorithms-and-data-structures"},
+                        {name: "Front End Libraries",
+                        provider: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/front-end-libraries"},
+						{name: "APIs and Microservices",
+                        provider: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/certification/fcc658e30d3-5abe-45fa-9eb1-ca30b335c16d/apis-and-microservices"}
+                    ],
+                    projectsData: [
+                        {name: "Tribute Page - John Conway", 
+                        url: "https://codepen.io/gochaugulava/full/qBOQaQO", 
+                        img: "images/pr1.png",
+                        info: "HTML/CSS",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/tribute_page"},
+                        {name: "Landing Page - Cardiology Clinic",
+                        url: "https://codepen.io/gochaugulava/full/ZEbVzwb",
+                        img: "images/pr2.png",
+                        info: "HTML/CSS",
+						git:"https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/landing_page"},
+                        {name: "Survey Form - Artifical Intelligence",
+                        url: "https://codepen.io/gochaugulava/full/VwvVyrv",
+                        img: "images/pr3.png",
+                        info: "HTML/CSS",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/survey_form"},
+                        {name: "Technical Doc - HTML for beginners",
+                        url: "https://codepen.io/gochaugulava/full/BaovrXN",
+                        img: "images/pr4.png",
+                        info: "HTML/CSS",
+						git:"https://github.com/GochaUgulava/FCC-BitCamp-HTML-CSS/tree/master/technical_documentation"},
+                        {name: "Random Quote Machine",
+                        url: "https://codepen.io/gochaugulava/full/ExPOoNK",
+                        img: "images/pr5.png",
+                        info: "HTML/CSS/JS/jQuery",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/random-quote-machine.html"},
+                        {name: "Markdown Previewer",
+                        url: "https://codepen.io/gochaugulava/full/mdVapEM",
+                        img: "images/pr6.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/markdown-previewer.html"},
+                        {name: "Drum Machine",
+                        url: "https://codepen.io/gochaugulava/full/KKVJZzB",
+                        img: "images/pr7.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/drum-machine.html"},
+                        {name: "Simple Calculator",
+                        url: "https://codepen.io/gochaugulava/full/gOPEdBR",
+                        img: "images/pr8.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/JS%20Calculator.html"},
+                        {name: "Pomodoro Clock",
+                        url: "https://codepen.io/gochaugulava/full/OJMGJBV",
+                        img: "images/pr9.png",
+                        info: "HTML/CSS/JS/React",
+						git: "https://github.com/GochaUgulava/FCC-BitCamp-Front-End-Libraries/blob/master/pomodoro-clock.html"},
+						{name: "Timestamp Microservice",
+                        url: "https://backend-timestamp.glitch.me",
+                        img: "images/pr10.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/Timestamp_Microservice"},
+						{name: "Request Header Parser Microservice",
+                        url: "https://backend-request-header-parser.glitch.me",
+                        img: "images/pr11.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/Request_Header_Parser_Microservice"},
+						{name: "URL Shortener Microservice",
+                        url: "https://backend-url-shortener.glitch.me",
+                        img: "images/pr12.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/URL_Shortener_Microservice"},
+						{name: "Exercise Tracker",
+                        url: "https://backend-exercise-tracker.glitch.me",
+                        img: "images/pr13.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/Exercise_Tracker"},
+						{name: "File Metadata Microservice",
+                        url: "https://backend-file-metadata.glitch.me",
+                        img: "images/pr14.png",
+                        info: "API/Microservice",
+						git: "https://github.com/GochaUgulava/FCC_APIs_and_Microservices/tree/main/File_Metadata_Microservice"}						
+                    ],
+					Otherdata: [
+					    {name: "Conway - Life (Python)",
+					    img: "images/other1.gif",
+					    url: "https://github.com/GochaUgulava/conway_life",
+					    info: "A cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input."},
+					    {name: "Alien Invasion (Python)",
+					    img: "images/other2.gif",
+					    url: "https://github.com/GochaUgulava/alien_invasion",
+					    info: "Arcade game from Matthes 'Python Crash Course' on python (using pygame module). The aliens are attacking! Don't let them land by shooting them with your mobile cannon, but be careful, enemies will accelerate each new wave."},
+                        {name: "COVID Invasion (Python)",
+					    img: "images/other3.gif",
+					    url: "https://github.com/GochaUgulava/covid_invasion",
+					    info: "Arcade game on python (using pygame module). Controlling the pill destroy viruses without touching healthy cells "},
+					    {name: "Kill Ghost (JavaScript)",
+					    img: "images/other4.gif",
+					    url: "https://github.com/GochaUgulava/CodeHS_BitCamp",
+					    info: "The game field is a rectangle along which the ghost moves with random speed. Reflected from the walls it changes speed, direction of movement and color each time - choosing these parameters randomly. The goal is using the gun to hit the ghost with a shot."},
+					    {name: "Breakout (JavaScript)",
+					    img: "images/other5.gif",
+					    url: "https://github.com/GochaUgulava/CodeHS_BitCamp",
+					    info: "The game breakout has long been a classic. Reflecting the ball with a paddle, we try to knock out all the bricks. For each destroyed brick points are awarded. A ball should not fly down, otherwise life is lost."}
+					]
+                }
+            }
+
+            render(){
+                return(
+                    <div id="portfolio">
+                        <div id="menu">
+							<ul>
+								<li><a href="index.html"><i className='fa fa-home' aria-hidden="true"></i> Home</a></li>
+								<li><a href="ds.html"><i className='fa fa-cogs' aria-hidden="true"></i> DataScience</a></li>
+								<li><a href="#"><i className='fa fa-code' aria-hidden="true"></i> Dev</a></li>
+								<li><a href="https://github.com/GochaUgulava/DataBlog/blob/main/d.ipynb" target="_blank"><i className='fa fa-line-chart' aria-hidden="true"></i> DataBlog</a></li>
+								<li><a href="images/cv_gochaugulava.pdf" download target="_blank"><i className='fa fa-qrcode' aria-hidden="true"></i> CV</a></li>
+								<li><a href="https://github.com/GochaUgulava" target="_blank"><i className='fa fa-github' aria-hidden="true"></i> Git</a></li>
+								<li><a href="https://www.linkedin.com/in/gochaugulava" target="_blank"><i className='fa fa-linkedin' aria-hidden="true"></i> LinkedIn</a></li>
+								<li><a href="mailto:gochaugulava@gmail.com"  target="_blank"><i className='fa fa-at' aria-hidden="true"></i> e-Mail</a></li>
+							</ul>
+						</div>
+                         
+						<div id="web">
+							<Skills data={this.state.skillsData} />
+							<Certificates data={this.state.certificatesData} />
+							<Projects data={this.state.projectsData} />
+						</div>
+						<div id="other">
+                            <Other data={this.state.Otherdata} />
+						</div>
+                        <footer id="footer"><small>GochaUgulava, 2020-2022. Personal Portfolio, v5.1</small></footer>
+                    </div>
+                );
+            }
+        }
+
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("app")
+        )
+
+        
+    </script>
+	</div>
+    </body>
+</html>

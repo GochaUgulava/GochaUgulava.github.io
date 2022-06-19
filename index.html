@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gocha Ugulava - Personal Portfolio</title>
+        <link rel="icon" href="images/favicon.ico">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link  rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+	<div id="bodymain">
+
+        <div id="app"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     
+    <script type="text/babel">
+
+            
+        
+		class AISkills extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="skills-section">
+		                <div class="section-title" id="skills">Skills and Areas of Interest</div>
+                        <ul id="list-of-skills">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <li id={"skill-"+i}><img className="ico" src={item.img} />{item.text}</li>
+                                );}
+                            )}
+                        </ul>
+		        	</div>
+                );
+            }
+        }
+		
+
+        class Publications extends React.Component {
+            constructor(props){
+                super(props);
+            }
+
+            render(){
+                return (
+                    <div id="publications-section">
+		                <div class="section-title" id="publications">Publications</div>
+                        <ul id="list-of-publications">
+                            {this.props.data.map(function(item, i){
+                                return (
+                                    <li id={"publication-"+i}>- {item}</li>
+                                );}
+                            )}
+                        </ul>
+		        	</div>
+                );
+            }
+        }
+
+   
+        class App extends React.Component {
+            constructor(props){
+                super(props);
+                this.state = {
+                    publicationsData: [
+                        'Gocha Ugulava - Review Of Theoretical Approaches To Using Of Artificial Intelligence For Planning Problems In Economics. Economic profile. 2021, Volume 16, №2 (22), pp. 107-122',
+						'Niko Chikhladze, Mirza Khidasheli, Gocha Ugulava - Economic Development of Georgia in the Context of Covid-19. Macroeconomic and Regional Aspects. Monograph. Kutaisi University. 2021. 124 pages. ISBN 978-9943-473-64-3',
+						'Niko Chikhladze, Gocha Ugulava - Regional Economic Development Inequality Research in Georgia by PCA Method. Economic Alternatives. Economic Alternatives 2022, Vol. 28,  Issue 1, pp. 35-51. ',
+                        'Gocha Ugulava -  Use of Artificial Neural Networks to Predict Territorial Economic Indicators. Globalization And Business, #8, 2019, pp. 143-146',
+                        'Niko Chikhladze, Gocha Ugulava - The Role of Strategic Planning for Local Territorial Development. Innovative Economics and Management N1, 2016 pp. 121-128.',
+                        'Tskaltubo Municipality Economic Development Plan. 2007 50 p. Gocha Ugulava - Coordinator of The Working Group, Author. Published in the Frames of CHF-Georgia and USAID-Funded Project.',
+                        'Tskaltubo District (Information-Analytical Review) - Guram Sopromadze, Gocha Ugulava. 36 p. 2005 Published by the Tskaltubo District Councils Association, Funded by the United States Agency for International Development and Urban Institute.'
+                    ],
+					AIskillsData: [
+                        {img: 'images/data.svg',
+                        text: "Macro- and Regional Economics, Mathematical Methods in Economics"},
+                        {img: 'images/nn.svg',
+                        text: "Machine Learning (ML), Artificial Intelligence (AI) Applications in Economics"},
+                        {img: 'images/ai.jpg',
+                        text: "Artificial Neural Networks, Deep Learning (DL), Cognitive Modeling"},
+						{img: 'images/frameworks.png',
+                        text: "Data Science, Descriptive, Diagnostic, Predictive, Prescriptive, Cognitive Analytics, Data-Driven Modeling, Visualization "},
+                        {img: 'images/code.png',
+                        text: "Python, R, C, Fortran, numpy, pandas, scipy, scikit-learn, tensorflow, keras, matplotlib, seaborn"}
+                    ]
+                }
+            }
+
+            render(){
+                return(
+                    <div id="portfolio">
+                        <div id="menu">
+							<ul>
+								<li><a href="#"><i className='fa fa-home' aria-hidden="true"></i> Home</a></li>
+								<li><a href="ds.html"><i className='fa fa-cogs' aria-hidden="true"></i> DataScience</a></li>
+								<li><a href="dev.html"><i className='fa fa-code' aria-hidden="true"></i> Dev</a></li>
+								<li><a href="https://github.com/GochaUgulava/DataBlog/blob/main/d.ipynb" target="_blank"><i className='fa fa-line-chart' aria-hidden="true"></i> DataBlog</a></li>
+								<li><a href="images/cv_gochaugulava.pdf" download target="_blank"><i className='fa fa-qrcode' aria-hidden="true"></i> CV</a></li>
+								<li><a href="https://github.com/GochaUgulava" target="_blank"><i className='fa fa-github' aria-hidden="true"></i> Git</a></li>
+								<li><a href="https://www.linkedin.com/in/gochaugulava" target="_blank"><i className='fa fa-linkedin' aria-hidden="true"></i> LinkedIn</a></li>
+								<li><a href="mailto:gochaugulava@gmail.com"  target="_blank"><i className='fa fa-at' aria-hidden="true"></i> e-Mail</a></li>
+							</ul>
+						</div>
+                        <div id="welcome-section">
+                            <div id="welcome-1">Gocha Ugulava</div>
+							<div id="welcome-2">PhD in Economics</div>
+							<div id="linkmap">
+								<a href="#skills-section"><div class="linkmapa"><i className='fa fa-arrow-circle-right' aria-hidden="true"></i>  Skills and Areas of Interest</div></a>
+								<a href="#publications-section"><div class="linkmapa"><i className='fa fa-arrow-circle-right' aria-hidden="true"></i>  Publications</div></a>
+								<a href="dsmap.html" target="_blank"><div class="linkmapa"><i className='fa fa-arrow-circle-right' aria-hidden="true"></i>  Data Science Roadmap</div></a> 
+								<a href="#" target="_blank"><div class="linkmapa"><i className='fa fa-arrow-circle-right' aria-hidden="true"></i>  Economics quote of the day</div></a> 
+								<a href="#" target="_blank"><div class="linkmapa"><i className='fa fa-arrow-circle-right' aria-hidden="true"></i>  Economics joke of the day</div></a> 
+							</div>
+						</div>
+						<div id="ai">
+							<AISkills data={this.state.AIskillsData} />
+							<Publications data={this.state.publicationsData} />
+						</div>
+						
+                        <footer id="footer"><small>GochaUgulava, 2020-2022. Personal Portfolio, v5.1</small></footer>
+                    </div>
+                );
+            }
+        }
+
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("app")
+        )
+
+        
+    </script>
+	</div>
+    </body>
+</html>
